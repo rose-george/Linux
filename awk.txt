@@ -1,0 +1,16 @@
+#print 2nd column from csv
+awk 'BEGIN {FS=","} {print $2}'
+
+#generate output in csv format
+awk 'BEGIN {FS=",";OFS=","} {print $2,$3}'
+
+#to search for string similar to grep
+awk  '/Gene-1/'
+
+#NR,NF
+awk  'BEGIN {FS=","}  END {printf "no of records:%d",NR}'
+awk 'BEGIN {FS=","} {print $NF}
+
+#array in awk
+awk 'BEGIN { b[0]=7;b[1]=1;b[2]=6; for (ele in b) {print b[ele],ele}}'
+

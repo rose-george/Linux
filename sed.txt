@@ -1,0 +1,56 @@
+#to print first line
+sed -n '1p' file1.txt
+
+#to print last line
+sed -n '$p' file1.txt
+
+#to print 2 and 4 line
+sed -n '2p;4p' file1.txt
+
+#to print 2-4 line.
+sed -n '2,4p' file1.txt
+
+#all except 1 line
+sed -n '1!p' file1.txt
+
+#print matching lines ( similar to grep)
+sed -n '/Acv/p' file1.txt
+
+#print lines matching between 2 words
+sed -ne '/one/,/four/p' /tmp/file
+
+#remove leading whitespaces
+sed 's/^[\t ]*//g' file1.txt
+
+#Replace whole line when match found
+sed ‘/two/cyour text’ /tmp/file
+
+#Replace “one” with “your text” at line number 5
+sed ‘5s/one/your text/g’ /tmp/file
+
+#append 2 lines after a match
+sed  /stuff/anewline\\nnewline2 file1.txt
+
+#insert 2 lines before a match is found
+sed  /stuff/inewline\\nnewline2 file1.txt
+
+#add a hash to the matching string
+sed  '/stuff/ s/^/#/ ' file1.txt
+
+#add word after match
+echo “This is not test” |sed 's/<is>/& really/'
+
+#add word before match
+echo “This is not test” |sed 's/<is>/really &/'
+
+#ignore case 
+sed -e 's/two/new-word/Ig' /tmp/file
+
+#delete empty lines 
+sed -e '/^$/d' file1.txt
+
+#replace one in fourth line
+sed -e '4s/one/replaced/g' /tmp/file
+
+#Add prefix
+sed -ne 's/.*/PREFIX: &/p'

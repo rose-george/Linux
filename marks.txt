@@ -1,0 +1,5 @@
+Maths 50
+Science 40
+Social 60
+English 45
+German 55
